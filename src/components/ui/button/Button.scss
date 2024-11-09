@@ -1,0 +1,13 @@
+@import "../../../index.scss";
+.button {
+  width: 150px;
+  height: 36px;
+  color: $text-color;
+  background-color: $button-color;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  &:active {
+    background-color: $active-button-color;
+  }
+}
