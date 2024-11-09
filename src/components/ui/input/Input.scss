@@ -1,6 +1,6 @@
 @import "../../../index.scss";
 .input {
-  border: 1px solid $gray-neutral;
+  border: $border;
   border-radius: $border-radius;
   padding: 11px 10px;
   color: $text-color;
@@ -8,4 +8,12 @@
   width: 100%;
   outline: none;
   font-size: 16px;
+
+  &:hover {
+    border-color: $hover-field;
+  }
+
+  &:focus {
+    border-color: $focus-field;
+  }
 }

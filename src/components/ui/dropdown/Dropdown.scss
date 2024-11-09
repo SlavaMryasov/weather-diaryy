@@ -3,7 +3,13 @@
   width: 100%;
   padding: 10px;
   border-radius: $border-radius;
-  border: 1px solid $gray-neutral;
+  border: $border;
+  &:hover {
+    border-color: $hover-field;
+  }
+  &:focus-within {
+    border-color: $focus-field;
+  }
 }
 
 .p-dropdown-items {
@@ -12,8 +18,9 @@
   background-color: $background-color;
   color: $text-color;
   border-radius: $border-radius;
-  border: 1px solid $gray-neutral;
+  border: $border;
   overflow: hidden;
+
   li {
     padding: 5px;
   }
@@ -23,8 +30,4 @@
 }
 .p-dialog-header-close {
   color: $text-color;
-
-  &:hover {
-    color: $gray-neutral;
-  }
 }
