@@ -1,0 +1,11 @@
+@import "../../../index.scss";
+.input {
+  border: 1px solid $gray-neutral;
+  border-radius: $border-radius;
+  padding: 11px 10px;
+  color: $text-color;
+  background-color: $background-color;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+}
