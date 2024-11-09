@@ -1,0 +1,10 @@
+@import "../../../index.scss";
+.container {
+  display: flex;
+  justify-content: center;
+  width: 1280px;
+  flex-direction: column;
+}
+.header {
+  color: $text-color;
+}

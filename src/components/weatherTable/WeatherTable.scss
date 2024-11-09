@@ -1,0 +1,47 @@
+@import "../../index.scss";
+.weather-table-container {
+  background-color: $background-color;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  color: $text-color;
+
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .p-datatable {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    .p-datatable-thead > tr > th {
+      background-color: $background-color;
+      font-weight: bold;
+      color: $text-color;
+    }
+
+    .p-datatable-tbody > tr {
+      &:nth-child(odd) {
+        background-color: lighten($background-color, 10%);
+      }
+      &:hover {
+        background-color: lighten($background-color, 20%);
+      }
+    }
+
+    .temperature-column {
+      &.alert {
+        color: $danger;
+        font-weight: bold;
+      }
+      &.normal {
+        color: $green-safe;
+        font-weight: bold;
+      }
+    }
+  }
+}
