@@ -1,6 +1,6 @@
 
 export type WeatherEntry = {
-    id?: number;
+    id?: string;
     date: string;
     temperature: number;
     weather: string;

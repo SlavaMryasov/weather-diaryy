@@ -6,9 +6,9 @@ import { useGetWeatherEntriesQuery } from "../../services/weather.api";
 import { Button } from "../ui/button/Button";
 import "./WeatherTable.scss";
 import { MainLayout } from "../ui/layout/MainLayout";
-import { WeatherModal } from "../../modal/WeatherModal";
+import { WeatherModal } from "../modal/WeatherModal";
 
-const WeatherTable: React.FC = () => {
+const WeatherTable = () => {
   const { data, error, isLoading, refetch } = useGetWeatherEntriesQuery();
   const [isDialogVisible, setIsDialogVisible] = useState(false);
 
