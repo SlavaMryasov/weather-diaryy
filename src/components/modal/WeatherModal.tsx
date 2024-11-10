@@ -1,6 +1,6 @@
 import { Dialog } from "primereact/dialog";
 import ReactDOM from "react-dom";
-import { WeatherEntryForm } from "../components/weatherEntryForm/WeatherEntryForm";
+import { WeatherEntryForm } from "../weatherEntryForm/WeatherEntryForm";
 import "./WeatherModal.scss";
 
 type WeatherModalProps = {

@@ -1,33 +1,40 @@
+import { formatDate } from '../utils/formatDate';
 import { User, Weather, WeatherEntry } from './types';
+import { v4 as uuid } from 'uuid';
+
+const userIdVasya = uuid();
+const userIdIgor = uuid();
+const userIdLena = uuid();
+
 
 export const entries: WeatherEntry[] = [
     {
-        id: 1,
-        date: new Date().toISOString(),
+        id: uuid(),
+        date: formatDate(),
         temperature: 23.5,
-        weather: 'Sunny',
-        submittedBy: 'Vasya',
-        comment: 'Nice weather',
+        weather: 'Солнечно',
+        submittedBy: 'Вася',
+        comment: 'Хорошая погода',
     },
     {
-        id: 2,
-        date: new Date().toISOString(),
+        id: uuid(),
+        date: formatDate(),
         temperature: -5,
-        weather: 'Snowy',
-        submittedBy: 'Igor',
-        comment: 'Very cold',
+        weather: 'Снежно',
+        submittedBy: 'Игорь',
+        comment: 'Очень холодно',
     },
 ];
 
 export const users: User[] = [
-    { id: 'Vasya', name: 'Vasya' },
-    { id: 'Igor', name: 'Igor' },
-    { id: 'Lena', name: 'Lena' },
+    { id: userIdVasya, name: 'Вася' },
+    { id: userIdIgor, name: 'Игорь' },
+    { id: userIdLena, name: 'Лена' },
 ];
 
 export const weather: Weather[] = [
-    { label: "Солнечно", value: "Sunny" },
-    { label: "Дождливо", value: "Rainy" },
-    { label: "Облачно", value: "Cloudy" },
-    { label: "Снежно", value: "Snowy" },
+    { label: "Солнечно", value: "Солнечно" },
+    { label: "Дождливо", value: "Дождливо" },
+    { label: "Облачно", value: "Облачно" },
+    { label: "Снежно", value: "Снежно" },
 ];
