@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import "./App.css";
+import "./App.scss";
 import WeatherTable from "./components/weatherTable/WeatherTable";
 import store from "./store";
 

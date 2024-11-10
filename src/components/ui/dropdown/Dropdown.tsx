@@ -6,6 +6,6 @@ import "./Dropdown.scss";
 
 type Props = {} & DropdownProps;
 
-export const CustomDropdown = (props: Props) => {
+export const Dropdown = (props: Props) => {
   return <PrimeReactDropdown {...props} />;
 };

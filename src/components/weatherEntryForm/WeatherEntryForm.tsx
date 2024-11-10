@@ -7,17 +7,21 @@ import {
   useGetWeatherTypesQuery,
 } from "../../services/weather.api";
 import { Button } from "../ui/button/Button";
-import { CustomDropdown } from "../ui/dropdown/Dropdown";
+import { Dropdown } from "../ui/dropdown/Dropdown";
 import { Input } from "../ui/input/Input";
+import { formatDate } from "../../utils/formatDate";
 
 const weatherEntryFormSchema = z.object({
-  temperature: z.string().refine(
-    (value) => {
-      const temp = Number(value);
-      return temp >= -50 && temp <= 60;
-    },
-    { message: "Температура должна быть от -50 до 60" }
-  ),
+  temperature: z
+    .string()
+    .min(1, { message: "Введите температуру" })
+    .refine(
+      (value) => {
+        const temp = Number(value);
+        return temp >= -50 && temp <= 60;
+      },
+      { message: "Температура должна быть от -50 до 60" }
+    ),
   weather: z.string().min(3, { message: "Выберите погоду" }),
   submittedBy: z.string().min(3, { message: "Выберите пользователя" }),
   comment: z.string().max(12, { message: "Максимум 12 символов" }).optional(),
@@ -64,7 +68,7 @@ export const WeatherEntryForm = ({ onHide }: WeatherEntryFormProps) => {
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     await addWeatherEntry({
-      date: new Date().toISOString(),
+      date: formatDate(),
       temperature: parseFloat(data.temperature),
       weather: data.weather,
       submittedBy: data.submittedBy,
@@ -92,7 +96,7 @@ export const WeatherEntryForm = ({ onHide }: WeatherEntryFormProps) => {
         </div>
         <div className="field">
           <label htmlFor="weather">Погода</label>
-          <CustomDropdown
+          <Dropdown
             id="weather"
             options={weatherTypes || []}
             placeholder="Выберите погоду"
@@ -106,11 +110,11 @@ export const WeatherEntryForm = ({ onHide }: WeatherEntryFormProps) => {
         </div>
         <div className="field">
           <label htmlFor="submittedBy">Кто заполнил</label>
-          <CustomDropdown
+          <Dropdown
             id="submittedBy"
             options={users?.map((user) => ({
               label: user.name,
-              value: user.id,
+              value: user.name,
             }))}
             placeholder="Выберите пользователя"
             {...submittedByField}
